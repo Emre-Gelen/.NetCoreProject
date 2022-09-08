@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Architecture\Data\Configuration\NetCoreProject.Architecture.Data.Configuration.ConfigurationManager\NetCoreProject.Architecture.Data.Configuration.ConfigurationManager.csproj" />
+    <ProjectReference Include="..\..\Constants\NetCoreProject.Services.Classroom.Data.Constants.LessonConstants\NetCoreProject.Services.Classroom.Data.Constants.LessonConstants.csproj" />
+    <ProjectReference Include="..\..\NetCoreProject.Services.Classroom.Data.Interfaces\NetCoreProject.Services.Classroom.Data.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
