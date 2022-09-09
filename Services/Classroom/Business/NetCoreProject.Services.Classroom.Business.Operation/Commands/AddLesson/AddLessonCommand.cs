@@ -11,9 +11,10 @@ public class AddLessonCommand : IRequestHandler<AddLessonRequestModel, AddLesson
     private readonly ICacheService _cacheService;
     private readonly IMapper _mapper;
 
-    public AddLessonCommand(ICacheService cacheService)
+    public AddLessonCommand(ICacheService cacheService, IMapper mapper)
     {
         _cacheService = cacheService;
+        _mapper = mapper;
     }
 
     public async Task<AddLessonResponseModel> Handle(AddLessonRequestModel request, CancellationToken cancellationToken)
