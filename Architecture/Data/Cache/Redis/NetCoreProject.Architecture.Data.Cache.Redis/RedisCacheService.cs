@@ -9,9 +9,17 @@ namespace NetCoreProject.Architecture.Data.Cache.Redis
     {
         private readonly IDistributedCache _redisDb;
         private readonly IConnectionMultiplexer _multiplexer;
-        public async Task<IEnumerable<T>> GetAll<T>(string pattern = "*", Func<T, bool> filterFunction = null)
+
+        public RedisCacheService(IConnectionMultiplexer multiplexer, IDistributedCache redisDb)
         {
-            var hasId = typeof(T).GetType().GetProperties().Any(p => p.Name == "Id");//If generic class has Id property set Id as Key.
+            _multiplexer = multiplexer;
+            _redisDb = redisDb;
+        }
+
+        public async Task<IEnumerable<T>> GetAll<T>(string pattern = "*", Func<T, bool> filterFunction = null) where T : new()
+        {
+            var tObj = new T();
+            var hasId = tObj.GetType().GetProperty("Id");//If generic class has Id property set Id as Key.
             var keys = _multiplexer
                 .GetServer(_multiplexer
                     .GetEndPoints()
@@ -22,8 +30,8 @@ namespace NetCoreProject.Architecture.Data.Cache.Redis
             foreach (var key in keys)
             {
                 var currentData = JsonConvert.DeserializeObject<T>(_redisDb.GetString(key));
-                if (hasId)
-                    currentData?.GetType()?.GetProperty("Id")?.SetValue(currentData, key);
+                if (hasId is not null)
+                    currentData?.GetType()?.GetProperty("Id")?.SetValue(currentData,Guid.Parse(key));
 
                 result.Add(currentData);
             };

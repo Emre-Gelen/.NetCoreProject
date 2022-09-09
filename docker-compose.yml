@@ -1,0 +1,37 @@
+version: '3.4'
+
+services:
+    classroomCache:
+        container_name: classroomCache
+        image: redis:latest
+        restart: always
+        environment:
+            - ALLOW_EMPTY_PASSWORD=yes
+        ports:
+            - '6380:6380'
+        command: redis-server --port 6380
+
+    contactCache:
+        container_name: contactCache
+        image: redis:latest
+        restart: always
+        environment:
+            - ALLOW_EMPTY_PASSWORD=yes
+        ports:
+            - '6379:6379'
+        command: redis-server --port 6379
+
+    netcoreproject.services.classroom.web.api:
+        container_name: classroomapi
+        image: ${DOCKER_REGISTRY-}netcoreprojectservicesclassroomwebapi:1.0
+        build:
+          context: .
+          dockerfile: Services/Classroom/Web/NetCoreProject.Services.Classroom.Web.API/Dockerfile
+
+    netcoreproject.services.contact.web.api:
+        container_name: contactapi
+        image: ${DOCKER_REGISTRY-}netcoreprojectservicescontactwebapi:1.0
+        build:
+          context: .
+          dockerfile: NetCoreProject.Services.Contact.Web.API/Dockerfile
+

@@ -2,7 +2,6 @@
 using MediatR;
 using NetCoreProject.Architecture.Data.Cache.Interfaces;
 using NetCoreProject.Services.Classroom.Data.Interfaces;
-using NetCoreProject.Services.Classroom.Model.CacheModel;
 using NetCoreProject.Services.Classroom.Model.Exchange.Contact._Common;
 using NetCoreProject.Services.Classroom.Model.Exchange.Lesson.Get;
 

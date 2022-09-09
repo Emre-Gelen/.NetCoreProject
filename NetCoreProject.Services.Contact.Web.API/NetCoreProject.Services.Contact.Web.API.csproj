@@ -4,14 +4,19 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>4fc77108-fa45-4ee6-9abf-6db316ac1e6c</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\Architecture\Registration\NetCoreProject.Architecture.Registration.Redis\NetCoreProject.Architecture.Registration.Redis.csproj" />
+    <ProjectReference Include="..\Services\Contact\Registration\NetCoreProject.Services.Contact.Registration\NetCoreProject.Services.Contact.Registration.csproj" />
   </ItemGroup>
 
 </Project>

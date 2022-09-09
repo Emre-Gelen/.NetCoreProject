@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\Architecture\Data\Configuration\NetCoreProject.Architecture.Data.Configuration.ConfigurationManager\NetCoreProject.Architecture.Data.Configuration.ConfigurationManager.csproj" />
+    <ProjectReference Include="..\..\..\Common\Constants\NetCoreProject.Services.Contact.Common.Constants.Contact\NetCoreProject.Services.Contact.Common.Constants.Contact.csproj" />
+    <ProjectReference Include="..\..\NetCoreProject.Services.Contact.Data.Interfaces\NetCoreProject.Services.Contact.Data.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

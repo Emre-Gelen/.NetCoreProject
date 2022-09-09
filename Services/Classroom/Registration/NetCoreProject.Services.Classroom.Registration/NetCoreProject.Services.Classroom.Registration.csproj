@@ -14,8 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Business\NetCoreProject.Services.Classroom.Business.Mapper\NetCoreProject.Services.Classroom.Business.Mapper.csproj" />
     <ProjectReference Include="..\..\Business\NetCoreProject.Services.Classroom.Business.Operation\NetCoreProject.Services.Classroom.Business.Operation.csproj" />
     <ProjectReference Include="..\..\Data\ApplicationSetting\ClassLibrary1\NetCoreProject.Services.Classroom.Data.ApplicationSetting.Manager.csproj" />
+    <ProjectReference Include="..\..\Data\Services\NetCoreProject.Services.Classroom.Data.Services.Manager\NetCoreProject.Services.Classroom.Data.Services.Manager.csproj" />
   </ItemGroup>
 
 </Project>

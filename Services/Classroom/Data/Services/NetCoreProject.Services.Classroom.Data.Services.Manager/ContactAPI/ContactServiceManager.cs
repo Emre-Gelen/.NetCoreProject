@@ -12,10 +12,11 @@ public class ContactServiceManager : IContactDataStore
     private readonly ILessonConstantsStore _lessonConstantsStore;
     private readonly IMapper _mapper;
 
-    public ContactServiceManager(IHttpClientFactory httpClientFactory, ILessonConstantsStore store)
+    public ContactServiceManager(IHttpClientFactory httpClientFactory, ILessonConstantsStore store, IMapper mapper)
     {
         _httpClientFactory = httpClientFactory;
         _lessonConstantsStore = store;
+        _mapper = mapper;
     }
 
     public async Task<ContactData> GetContact(Guid contactId)
@@ -26,6 +27,10 @@ public class ContactServiceManager : IContactDataStore
 
         var httpClient = _httpClientFactory.CreateClient();
         var httpResponseMessage = await httpClient.SendAsync(contactHttpMessage);
+        if (!httpResponseMessage.IsSuccessStatusCode)
+        {
+            return null;
+        }
 
         var contactString = await httpResponseMessage.Content.ReadAsStringAsync();
         var contactModel = JsonConvert.DeserializeObject<GetContactResponseModel>(contactString);

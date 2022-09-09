@@ -7,7 +7,7 @@ namespace NetCoreProject.Services.Contact.Data.ApplicationSetting.Manager;
 
 public class ContactValidationConstantsApplicationSettingManager : ConfigurationManager, IContactValidationConstantsStore
 {
-    public ContactValidationConstantsApplicationSettingManager(IConfiguration configuration) : base(configuration){}
+    public ContactValidationConstantsApplicationSettingManager(IConfiguration configuration) : base(configuration) { }
 
     public string SpecialCharacters => GetValue<string>(ContactValidationConstants.SpecialCharacters);
 

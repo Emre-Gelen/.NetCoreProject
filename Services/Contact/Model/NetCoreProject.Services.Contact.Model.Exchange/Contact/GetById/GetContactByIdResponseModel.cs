@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NetCoreProject.Services.Contact.Model.Exchange.Contact.GetById;
+﻿namespace NetCoreProject.Services.Contact.Model.Exchange.Contact.GetById;
 
 public class GetContactByIdResponseModel
 {

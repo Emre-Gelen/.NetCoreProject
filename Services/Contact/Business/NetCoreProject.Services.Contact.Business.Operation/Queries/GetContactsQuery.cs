@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using MediatR;
+﻿using MediatR;
 using NetCoreProject.Architecture.Data.Cache.Interfaces;
 using NetCoreProject.Services.Contact.Model.Exchange.Contact.Get;
 

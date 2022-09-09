@@ -7,7 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Queries\" />
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Architecture\Data\Cache\NetCoreProject.Architecture.Data.Cache.Interfaces\NetCoreProject.Architecture.Data.Cache.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Common\Extensions\NetCoreProject.Services.Contact.Common.Extensions.Validation\NetCoreProject.Services.Contact.Common.Extensions.Validation.csproj" />
+    <ProjectReference Include="..\..\Data\NetCoreProject.Services.Contact.Data.Interfaces\NetCoreProject.Services.Contact.Data.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Model\NetCoreProject.Services.Contact.Model.CacheModel\NetCoreProject.Services.Contact.Model.CacheModel.csproj" />
+    <ProjectReference Include="..\..\Model\NetCoreProject.Services.Contact.Model.Exchange\NetCoreProject.Services.Contact.Model.Exchange.csproj" />
   </ItemGroup>
 
 </Project>

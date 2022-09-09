@@ -3,6 +3,6 @@
 namespace NetCoreProject.Services.Classroom.Model.Exchange.Lesson.GetById;
 public class GetLessonByIdResponseModel
 {
-    public string LessonName { get; set; }
+    public string Name { get; set; }
     public List<ContactData> Contacts { get; set; }
 }

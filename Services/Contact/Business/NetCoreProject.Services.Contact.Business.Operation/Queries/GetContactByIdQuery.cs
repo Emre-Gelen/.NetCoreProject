@@ -10,18 +10,19 @@ public class GetContactByIdQuery : IRequestHandler<GetContactByIdRequestModel, G
     private readonly ICacheService _cacheService;
     private readonly IMapper _mapper;
 
-    public GetContactByIdQuery(ICacheService cacheService)
+    public GetContactByIdQuery(ICacheService cacheService, IMapper mapper)
     {
         _cacheService = cacheService;
+        _mapper = mapper;
     }
 
-    public Task<GetContactByIdResponseModel> Handle(GetContactByIdRequestModel request, CancellationToken cancellationToken)
+    public async Task<GetContactByIdResponseModel> Handle(GetContactByIdRequestModel request, CancellationToken cancellationToken)
     {
-        var contact = _cacheService.GetByKey<Model.CacheModel.Contact>(request.Id.ToString());
+        var contact = await _cacheService.GetByKey<Model.CacheModel.Contact>(request.Id.ToString());
         if (contact == default)
             throw new ArgumentNullException("Contact not found!");
 
         var contactResponseModel = _mapper.Map<GetContactByIdResponseModel>(contact);
-        throw new NotImplementedException();
+        return contactResponseModel;
     }
 }
