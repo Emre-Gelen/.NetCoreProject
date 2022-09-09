@@ -4,6 +4,7 @@ namespace NetCoreProject.Services.Classroom.Model.Exchange.Lesson.Get;
 
 public class GetLessonsResponseModel
 {
+    public Guid Id { get; set; }
     public string LessonName { get; set; }
     public List<ContactData> Contacts { get; set; }
 }

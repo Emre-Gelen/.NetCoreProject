@@ -1,3 +1,4 @@
+using NetCoreProject.Architecture.Registration.Redis;
 using NetCoreProject.Services.Classroom.Registration;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddClassroomRegistration();
+builder.Services.AddRedisRegistration(builder.Configuration);
 
 var app = builder.Build();
 

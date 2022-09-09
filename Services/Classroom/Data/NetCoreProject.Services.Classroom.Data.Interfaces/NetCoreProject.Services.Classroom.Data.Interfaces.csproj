@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Model\NetCoreProject.Services.Classroom.Model.Exchange\NetCoreProject.Services.Classroom.Model.Exchange.csproj" />
+    <ProjectReference Include="..\Services\NetCoreProject.Services.Classroom.Data.Services.Model\NetCoreProject.Services.Classroom.Data.Services.Model.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Business\NetCoreProject.Services.Classroom.Business.Operation\NetCoreProject.Services.Classroom.Business.Operation.csproj" />
-    <ProjectReference Include="..\..\Data\Stores\ClassLibrary1\NetCoreProject.Services.Classroom.Data.Stores.ApplicationSettingsStore.csproj" />
+    <ProjectReference Include="..\..\Data\ApplicationSetting\ClassLibrary1\NetCoreProject.Services.Classroom.Data.ApplicationSetting.Manager.csproj" />
   </ItemGroup>
 
 </Project>

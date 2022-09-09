@@ -6,8 +6,8 @@ namespace NetCoreProject.Services.Classroom.Business.Operation.Commands.AddLesso
 
 public class AddLessonCommandValidator : AbstractValidator<AddLessonRequestModel>
 {
-    private readonly ILessonValidationConstants _lessonValidationConstants;
-    public AddLessonCommandValidator(ILessonValidationConstants lessonValidationConstants)
+    private readonly ILessonValidationConstantsStore _lessonValidationConstants;
+    public AddLessonCommandValidator(ILessonValidationConstantsStore lessonValidationConstants)
     {
         _lessonValidationConstants = lessonValidationConstants;
         int minNameLength = _lessonValidationConstants.MinNameLength;

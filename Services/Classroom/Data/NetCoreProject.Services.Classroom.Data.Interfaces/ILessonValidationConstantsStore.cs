@@ -1,6 +1,6 @@
 ﻿namespace NetCoreProject.Services.Classroom.Data.Interfaces;
 
-public interface ILessonValidationConstants
+public interface ILessonValidationConstantsStore
 {
     public int MinNameLength { get; }
 }

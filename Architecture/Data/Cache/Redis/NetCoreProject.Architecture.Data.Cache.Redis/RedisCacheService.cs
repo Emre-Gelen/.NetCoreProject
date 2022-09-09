@@ -11,6 +11,7 @@ namespace NetCoreProject.Architecture.Data.Cache.Redis
         private readonly IConnectionMultiplexer _multiplexer;
         public async Task<IEnumerable<T>> GetAll<T>(string pattern = "*", Func<T, bool> filterFunction = null)
         {
+            var hasId = typeof(T).GetType().GetProperties().Any(p => p.Name == "Id");//If generic class has Id property set Id as Key.
             var keys = _multiplexer
                 .GetServer(_multiplexer
                     .GetEndPoints()
@@ -21,14 +22,12 @@ namespace NetCoreProject.Architecture.Data.Cache.Redis
             foreach (var key in keys)
             {
                 var currentData = JsonConvert.DeserializeObject<T>(_redisDb.GetString(key));
+                if (hasId)
+                    currentData?.GetType()?.GetProperty("Id")?.SetValue(currentData, key);
+
                 result.Add(currentData);
             };
             return filterFunction is not null ? result.Where(filterFunction) : result;
-        }
-
-        public async Task<IEnumerable<T>> GetAllWithId<T>(string pattern = "*", Func<T, bool> filterFunction = null) where T : class
-        {
-            throw new NotImplementedException();
         }
 
         public async Task<T> GetByKey<T>(string key)

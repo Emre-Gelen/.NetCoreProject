@@ -3,8 +3,8 @@ using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using NetCoreProject.Services.Classroom.Business.Operation;
+using NetCoreProject.Services.Classroom.Data.ApplicationSetting.Manager;
 using NetCoreProject.Services.Classroom.Data.Interfaces;
-using NetCoreProject.Services.Classroom.Data.Stores.ApplicationSettingsStore;
 using System.Reflection;
 
 namespace NetCoreProject.Services.Classroom.Registration;
@@ -17,7 +17,8 @@ public static class ClassroomRegistration
 
         Assembly configurationAppAssembly = typeof(AssemblyReference).Assembly;
 
-        services.AddScoped<ILessonValidationConstants, LessonConstantsApplicationSettingsStore>();
+        services.AddScoped<ILessonValidationConstantsStore, LessonValidationConstantsApplicationSettingManager>();
+        services.AddScoped<ILessonConstantsStore, LessonConstantsApplicationSettingManager>();
 
         services.AddMediatR(configurationAppAssembly);
         services.AddMediatR(assemblyReferences);

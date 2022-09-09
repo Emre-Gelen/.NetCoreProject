@@ -11,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Architecture\Data\Cache\NetCoreProject.Architecture.Data.Cache.Interfaces\NetCoreProject.Architecture.Data.Cache.Interfaces.csproj" />
     <ProjectReference Include="..\..\Data\NetCoreProject.Services.Classroom.Data.Interfaces\NetCoreProject.Services.Classroom.Data.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Model\NetCoreProject.Services.Classroom.Model.CacheModel\NetCoreProject.Services.Classroom.Model.CacheModel.csproj" />
     <ProjectReference Include="..\..\Model\NetCoreProject.Services.Classroom.Model.Exchange\NetCoreProject.Services.Classroom.Model.Exchange.csproj" />
   </ItemGroup>
 

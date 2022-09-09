@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Architecture\Registration\NetCoreProject.Architecture.Registration.Redis\NetCoreProject.Architecture.Registration.Redis.csproj" />
     <ProjectReference Include="..\..\Model\NetCoreProject.Services.Classroom.Model.Exchange\NetCoreProject.Services.Classroom.Model.Exchange.csproj" />
     <ProjectReference Include="..\..\Registration\NetCoreProject.Services.Classroom.Registration\NetCoreProject.Services.Classroom.Registration.csproj" />
   </ItemGroup>
