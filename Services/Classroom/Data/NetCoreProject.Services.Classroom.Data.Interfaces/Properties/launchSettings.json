@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "NetCoreProject.Services.Classroom.Data.Interfaces": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:59062;http://localhost:59063"
+    }
+  }
+}

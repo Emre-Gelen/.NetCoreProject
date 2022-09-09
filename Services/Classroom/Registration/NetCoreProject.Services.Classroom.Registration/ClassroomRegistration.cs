@@ -4,10 +4,10 @@ using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using NetCoreProject.Services.Classroom.Business.Mapper;
 using NetCoreProject.Services.Classroom.Business.Operation;
-using NetCoreProject.Services.Classroom.Data.ApplicationSetting.Manager;
 using NetCoreProject.Services.Classroom.Data.Interfaces;
 using NetCoreProject.Services.Classroom.Data.Services.Manager.ContactAPI;
 using System.Reflection;
+using NetCoreProject.Services.Classroom.Data.ApplicationSetting.Manager;
 
 namespace NetCoreProject.Services.Classroom.Registration;
 

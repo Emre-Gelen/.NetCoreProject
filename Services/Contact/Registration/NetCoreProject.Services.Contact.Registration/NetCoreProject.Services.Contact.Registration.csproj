@@ -17,7 +17,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Business\NetCoreProject.Services.Contact.Business.Mapper\NetCoreProject.Services.Contact.Business.Mapper.csproj" />
     <ProjectReference Include="..\..\Business\NetCoreProject.Services.Contact.Business.Operation\NetCoreProject.Services.Contact.Business.Operation.csproj" />
-    <ProjectReference Include="..\..\Data\ApplicationSetting\ClassLibrary1\NetCoreProject.Services.Contact.Data.ApplicationSetting.Manager.csproj" />
   </ItemGroup>
 
 </Project>

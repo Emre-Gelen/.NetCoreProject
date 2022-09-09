@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "NetCoreProject.Services.Classroom.Model.CacheModel": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:59066;http://localhost:59067"
+    }
+  }
+}
