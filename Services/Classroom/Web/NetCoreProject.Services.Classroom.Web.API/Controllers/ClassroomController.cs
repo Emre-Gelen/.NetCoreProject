@@ -35,10 +35,10 @@ namespace NetCoreProject.Services.Classroom.Web.API.Controllers
         {
             return Ok(await _mediator.Send(request));
         }
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(Guid Id)
+        [HttpGet("{Id}")]
+        public async Task<IActionResult> GetById(string Id)
         {
-            return Ok(await _mediator.Send(new GetLessonByIdRequestModel() { Id = Id }));
+            return Ok(await _mediator.Send(new GetLessonByIdRequestModel() { Id = Guid.Parse(Id) }));
         }
     }
 }

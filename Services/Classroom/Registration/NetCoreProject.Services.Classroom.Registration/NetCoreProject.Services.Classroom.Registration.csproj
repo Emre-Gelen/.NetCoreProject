@@ -16,7 +16,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Business\NetCoreProject.Services.Classroom.Business.Mapper\NetCoreProject.Services.Classroom.Business.Mapper.csproj" />
     <ProjectReference Include="..\..\Business\NetCoreProject.Services.Classroom.Business.Operation\NetCoreProject.Services.Classroom.Business.Operation.csproj" />
-    <ProjectReference Include="..\..\Data\ApplicationSetting\NetCoreProject.Services.Classroom.Data\NetCoreProject.Services.Classroom.Data.ApplicationSetting.Manager.csproj" />
     <ProjectReference Include="..\..\Data\ApplicationSetting\Services.Classroom.Data.ApplicationSetting.Manager\Services.Classroom.Data.ApplicationSetting.Manager.csproj" />
     <ProjectReference Include="..\..\Data\Services\NetCoreProject.Services.Classroom.Data.Services.Manager\NetCoreProject.Services.Classroom.Data.Services.Manager.csproj" />
   </ItemGroup>

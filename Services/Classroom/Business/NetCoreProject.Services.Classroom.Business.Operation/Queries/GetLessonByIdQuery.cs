@@ -27,17 +27,19 @@ public class GetLessonByIdQuery : IRequestHandler<GetLessonByIdRequestModel, Get
             throw new ArgumentNullException("Lesson not found!");
 
         var lessonResponseModel = _mapper.Map<GetLessonByIdResponseModel>(lesson);
-
-        foreach (Guid contactId in lesson.ContactIds)
+        if (lesson.ContactIds is not null)
         {
-            ContactData contactData = await _contactDataStore.GetContact(contactId);
-
-            if (contactData is not null)
+            foreach (Guid contactId in lesson.ContactIds)
             {
-                if (lessonResponseModel.Contacts is null)
-                    lessonResponseModel.Contacts = new List<ContactData>();
+                ContactData contactData = await _contactDataStore.GetContact(contactId);
 
-                lessonResponseModel.Contacts.Add(contactData);
+                if (contactData is not null)
+                {
+                    if (lessonResponseModel.Contacts is null)
+                        lessonResponseModel.Contacts = new List<ContactData>();
+
+                    lessonResponseModel.Contacts.Add(contactData);
+                }
             }
         }
         return lessonResponseModel;

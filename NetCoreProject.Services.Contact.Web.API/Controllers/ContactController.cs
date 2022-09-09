@@ -26,10 +26,10 @@ namespace NetCoreProject.Services.Contact.Web.API.Controllers
         {
             return Ok(await _mediator.Send(request));
         }
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(Guid Id)
+        [HttpGet("{Id}")]
+        public async Task<IActionResult> GetById(string Id)
         {
-            return Ok(await _mediator.Send(new GetContactByIdRequestModel() { Id = Id }));
+            return Ok(await _mediator.Send(new GetContactByIdRequestModel() { Id = Guid.Parse(Id) }));
         }
     }
 }
