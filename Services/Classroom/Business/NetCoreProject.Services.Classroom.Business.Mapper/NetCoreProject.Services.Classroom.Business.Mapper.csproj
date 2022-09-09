@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Data\Services\NetCoreProject.Services.Classroom.Data.Services.Model\NetCoreProject.Services.Classroom.Data.Services.Model.csproj" />
+    <ProjectReference Include="..\..\Model\NetCoreProject.Services.Classroom.Model.CacheModel\NetCoreProject.Services.Classroom.Model.CacheModel.csproj" />
     <ProjectReference Include="..\..\Model\NetCoreProject.Services.Classroom.Model.Exchange\NetCoreProject.Services.Classroom.Model.Exchange.csproj" />
   </ItemGroup>
 

@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\Architecture\Data\Configuration\NetCoreProject.Architecture.Data.Configuration.ConfigurationManager\NetCoreProject.Architecture.Data.Configuration.ConfigurationManager.csproj" />
-    <ProjectReference Include="..\..\..\Common\Constants\NetCoreProject.Services.Classroom.Common.Contants.Lesson\NetCoreProject.Services.Classroom.Common.Constants.Lesson.csproj" />
+    <ProjectReference Include="..\..\..\Common\Constants\NetCoreProject.Services.Classroom.Common.Constants.Lesson\NetCoreProject.Services.Classroom.Common.Constants.Lesson.csproj" />
     <ProjectReference Include="..\..\NetCoreProject.Services.Classroom.Data.Interfaces\NetCoreProject.Services.Classroom.Data.Interfaces.csproj" />
   </ItemGroup>
 
