@@ -4,18 +4,12 @@ services:
   netcoreproject.services.classroom.web.api:
     environment:
         - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-        - "5000:443"
-        - "5050:80"
     volumes:
         - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
         - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
   netcoreproject.services.contact.web.api:
     environment:
         - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-        - "7023:443"
-        - "5023:80"
     volumes:
         - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
         - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro

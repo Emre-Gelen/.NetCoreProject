@@ -1,28 +1,55 @@
 {
-  "ReRoutes": [
+  "Routes": [
     {
-      "UpstreamPathTemplate": "/Classroom/{everything}",
+      "UpstreamPathTemplate": "/Classroom/",
       "UpstreamHttpMethod": [ "POST", "GET" ],
-      "DownstreamPathTemplate": "api/Classroom/{everything}",
+      "DownstreamPathTemplate": "/api/Classroom",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5050
+          "Host": "classroomapi",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/Classroom/{everything}",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "DownstreamPathTemplate": "/api/Classroom/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "classroomapi",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/Contact/",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "DownstreamPathTemplate": "/api/Contact/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "contactapi",
+          "Port": 80
         }
       ]
     },
     {
       "UpstreamPathTemplate": "/Contact/{everything}",
       "UpstreamHttpMethod": [ "POST", "GET" ],
-      "DownstreamPathTemplate": "api/Contact/{everything}",
+      "DownstreamPathTemplate": "/api/Contact/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5023
+          "Host": "contactapi",
+          "Port": 80
         }
       ]
     }
-  ]
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:7000"
+  }
 }

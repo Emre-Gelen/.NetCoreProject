@@ -21,6 +21,13 @@ services:
             - '6379:6379'
         command: redis-server --port 6379
 
+    netcoreproject.gateway.web:
+        container_name: gateway
+        image: ${DOCKER_REGISTRY-}netcoreprojectgatewayweb
+        build:
+            context: .
+            dockerfile: Gateway/Web/NetCoreProject.Gateway.Web/Dockerfile
+
     netcoreproject.services.classroom.web.api:
         container_name: classroomapi
         image: ${DOCKER_REGISTRY-}netcoreprojectservicesclassroomwebapi:1.0
@@ -29,16 +36,8 @@ services:
           dockerfile: Services/Classroom/Web/NetCoreProject.Services.Classroom.Web.API/Dockerfile
 
     netcoreproject.services.contact.web.api:
-        container_name: contact
+        container_name: contactapi
         image: ${DOCKER_REGISTRY-}netcoreprojectservicescontactwebapi:1.0
         build:
           context: .
           dockerfile: Services/Contact/Web/NetCoreProject.Services.Contact.Web/Dockerfile
-
-    netcoreproject.gateway.web:
-        container_name: gateway
-        image: ${DOCKER_REGISTRY-}netcoreprojectgatewayweb
-        build:
-            context: .
-            dockerfile: Gateway/Web/NetCoreProject.Gateway.Web/Dockerfile
-
