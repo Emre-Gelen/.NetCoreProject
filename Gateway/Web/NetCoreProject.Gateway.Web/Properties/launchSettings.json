@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "NetCoreProject.Services.Contact.Web.API": {
+    "NetCoreProject.Gateway.Web": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
@@ -8,7 +8,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "https://localhost:7102;http://localhost:5102"
+      "applicationUrl": "https://localhost:7229;http://localhost:5229"
     },
     "IIS Express": {
       "commandName": "IISExpress",
@@ -31,8 +31,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:23098",
-      "sslPort": 44333
+      "applicationUrl": "http://localhost:50278",
+      "sslPort": 44375
     }
   }
 }

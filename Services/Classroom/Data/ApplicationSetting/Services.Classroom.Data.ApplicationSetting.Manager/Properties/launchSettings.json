@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Services.Classroom.Data.ApplicationSetting.Manager": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:51131;http://localhost:51132"
+    }
+  }
+}

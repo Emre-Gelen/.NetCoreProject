@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "NetCoreProject.Services.Contact.Common.Extensions.Validation": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:51129;http://localhost:51130"
+    }
+  }
+}

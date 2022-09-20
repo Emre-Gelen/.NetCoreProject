@@ -29,9 +29,16 @@ services:
           dockerfile: Services/Classroom/Web/NetCoreProject.Services.Classroom.Web.API/Dockerfile
 
     netcoreproject.services.contact.web.api:
-        container_name: contactapi
+        container_name: contact
         image: ${DOCKER_REGISTRY-}netcoreprojectservicescontactwebapi:1.0
         build:
           context: .
-          dockerfile: NetCoreProject.Services.Contact.Web.API/Dockerfile
+          dockerfile: Services/Contact/Web/NetCoreProject.Services.Contact.Web/Dockerfile
+
+    netcoreproject.gateway.web:
+        container_name: gateway
+        image: ${DOCKER_REGISTRY-}netcoreprojectgatewayweb
+        build:
+            context: .
+            dockerfile: Gateway/Web/NetCoreProject.Gateway.Web/Dockerfile
 
