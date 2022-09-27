@@ -10,16 +10,25 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Configuration.AddJsonFile($"Configuration/Ocelot/ocelot.json");
+//builder.Configuration.AddJsonFile($"Configuration/Ocelot/ocelot.SwaggerEndPoints.json");
 builder.Services.AddOcelot(builder.Configuration);
+//builder.Services.AddSwaggerForOcelot(builder.Configuration);
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+app.UseStaticFiles();
+app.UseSwagger();
+app.UseSwaggerUI(options =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    options.SwaggerEndpoint("/ClassroomSwagger/swagger/v1/swagger.json", "Classroom");
+    options.SwaggerEndpoint("/ContactSwagger/swagger/v1/swagger.json", "Contacts");
+});
+//app.UseSwaggerForOcelotUI(opt =>
+//{
+//    opt.PathToSwaggerGenerator = "/swagger/docs";
+//});
+
 
 app.UseOcelot().Wait();
 

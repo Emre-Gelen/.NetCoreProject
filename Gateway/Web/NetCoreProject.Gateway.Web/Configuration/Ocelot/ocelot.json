@@ -1,9 +1,21 @@
 {
   "Routes": [
     {
-      "UpstreamPathTemplate": "/Classroom/",
-      "UpstreamHttpMethod": [ "POST", "GET" ],
-      "DownstreamPathTemplate": "/api/Classroom",
+      "UpstreamPathTemplate": "/ContactSwagger/swagger/v1/swagger.json",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/swagger/v1/swagger.json",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "contactapi",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/ClassroomSwagger/swagger/v1/swagger.json",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/swagger/v1/swagger.json",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -13,7 +25,20 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/Classroom/{everything}",
+      "UpstreamPathTemplate": "/api/Classroom/",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "DownstreamPathTemplate": "/api/Classroom",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "classroomapi",
+          "Port": 80
+        }
+      ],
+      "SwaggerKey": "classroom"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Classroom/{everything}",
       "UpstreamHttpMethod": [ "POST", "GET" ],
       "DownstreamPathTemplate": "/api/Classroom/{everything}",
       "DownstreamScheme": "http",
@@ -25,7 +50,7 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/Contact/",
+      "UpstreamPathTemplate": "/api/Contact/",
       "UpstreamHttpMethod": [ "POST", "GET" ],
       "DownstreamPathTemplate": "/api/Contact/",
       "DownstreamScheme": "http",
@@ -34,10 +59,11 @@
           "Host": "contactapi",
           "Port": 80
         }
-      ]
+      ],
+      "SwaggerKey": "contact"
     },
     {
-      "UpstreamPathTemplate": "/Contact/{everything}",
+      "UpstreamPathTemplate": "/api/Contact/{everything}",
       "UpstreamHttpMethod": [ "POST", "GET" ],
       "DownstreamPathTemplate": "/api/Contact/{everything}",
       "DownstreamScheme": "http",
@@ -49,7 +75,8 @@
       ]
     }
   ],
+
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:7000"
+    "BaseUrl": "http://localhost"
   }
 }

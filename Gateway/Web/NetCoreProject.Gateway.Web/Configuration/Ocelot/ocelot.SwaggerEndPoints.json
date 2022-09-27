@@ -1,0 +1,26 @@
+{
+  "SwaggerEndPoints": [
+    {
+      "Key": "classroom",
+      "TransformByOcelotConfig": false,
+      "Config": [
+        {
+          "Name": "Classroom API",
+          "Version": "v1",
+          "Url": "http://classroomapi/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "contact",
+      "TransformByOcelotConfig": false,
+      "Config": [
+        {
+          "Name": "Contact API",
+          "Version": "v1",
+          "Url": "http://contactapi/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ]
+}
